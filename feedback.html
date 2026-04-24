@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Feedback</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.form-box{
+background:white;
+padding:20px;
+width:350px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.rating{
+margin-top:10px;
+}
+
+.rating label{
+display:block;
+margin:5px 0;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:15px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+#message{
+display:none;
+color:green;
+text-align:center;
+margin-top:10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="form-box">
+<h2>Customer Feedback</h2>
+
+<form id="feedbackForm">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<div class="rating">
+<p>Rate our service:</p>
+
+<label><input type="radio" name="rating" value="Excellent" required> Excellent</label>
+<label><input type="radio" name="rating" value="Good"> Good</label>
+<label><input type="radio" name="rating" value="Average"> Average</label>
+<label><input type="radio" name="rating" value="Poor"> Poor</label>
+
+</div>
+
+<textarea placeholder="Write your feedback" rows="4" required></textarea>
+
+<button type="submit">Submit</button>
+
+<p id="message">Feedback submitted successfully!</p>
+
+</form>
+</div>
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+e.preventDefault();
+document.getElementById("message").style.display = "block";
+this.reset();
+});
+</script>
+
+</body>
+</html>
